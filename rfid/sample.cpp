@@ -30,6 +30,15 @@
 #include "ltkcpp.h"
 #include "impinj_ltkcpp.h"
 #include "time.h"
+
+/////////////////
+/* edit by RZY */
+#include <ros/ros.h>
+#include <std_msgs/String.h>
+#include <sstream>
+#include "xxxxxxxx/rfid_msg.h"
+/////////////////
+
 //#include <std_msgs/String.h>
  
 
@@ -180,6 +189,8 @@ private:
     void
     printXMLMessage (
       CMessage *                pMessage);
+
+    
 };
 
 
@@ -263,6 +274,13 @@ main (
      * Run application, capture return value for exit status
      */
     rc = myApp.run(pReaderHostName);
+
+    /////////////////
+    /* edit by RZY */
+    ros::init(ac, av, "rfid_publisher");
+    ros::NodeHandle nh;
+    ros::Publisher rfid_publisher = nh.advertise<xxxxxxxx::rfid_msg>("/rfid_message", 10);
+    /////////////////
 
     printf("INFO: Done\n");
 
@@ -2074,17 +2092,25 @@ CMyApplication::printOneTagReportData (
     CParameter *                pEPCParameter =
                                     pTagReportData->getEPCParameter();
 
+    /////////////////
+    /* edit by RZY */
+    xxxxxxxx::rfid_msg rfid_infos;
+    /////////////////
+
     /* save a copy of the EPC */
     memset(epcBuf, 0x00, sizeof(epcBuf));
     formatOneEPC(pEPCParameter, epcBuf, 128, "");
 
     written = snprintf(ptr, len, " epc=%s", epcBuf);
+    rfid_infos.epc = epcBuf;
     ptr += written;
     len -= written;
+
 
     if(getOneTimestamp(pTagReportData->getFirstSeenTimestampUTC(), &time))
     {
     written = snprintf(ptr, len, " tm=%010u", time);
+    rfid_infos.time = time;
     ptr += written;
     len -= written;
     }
@@ -2092,9 +2118,11 @@ CMyApplication::printOneTagReportData (
     if(getOneChannelIndex(pTagReportData->getChannelIndex(), &channelIndex))
     {
         written = snprintf(ptr, len, " idx=%02u", channelIndex);
+        rfid_infos.idx = channelIndex;
         ptr += written;
         len -= written;
         written = snprintf(ptr, len, " mode=%04u", m_modelNumber);
+        rfid_infos.mode = m_modelNumber;
         ptr += written;
         len -= written;
     }
@@ -2102,6 +2130,7 @@ CMyApplication::printOneTagReportData (
     if(getOneAntenna(pTagReportData->getAntennaID(), &antenna))
     {
         written = snprintf(ptr, len, " ant=%01u", antenna);
+        rfid_infos.ant = antenna;
         ptr += written;
         len -= written;
     }
