@@ -38,8 +38,6 @@
 #include <sstream>
 #include "xxxxxxxx/rfid_msg.h"
 /////////////////
-
-//#include <std_msgs/String.h>
  
 
 using namespace LLRP;
@@ -270,17 +268,17 @@ main (
         /* no return */
     }
 
-    /*
-     * Run application, capture return value for exit status
-     */
-    rc = myApp.run(pReaderHostName);
-
-    /////////////////
+   /////////////////
     /* edit by RZY */
     ros::init(ac, av, "rfid_publisher");
     ros::NodeHandle nh;
     ros::Publisher rfid_publisher = nh.advertise<xxxxxxxx::rfid_msg>("/rfid_message", 10);
     /////////////////
+
+    /*
+     * Run application, capture return value for exit status
+     */
+    rc = myApp.run(pReaderHostName);
 
     printf("INFO: Done\n");
 
@@ -465,7 +463,7 @@ CMyApplication::run (
 								if(0 == startROSpec())
 								{
 									rc = 10;
-									if(0 == awaitAndPrintReport(1800))
+									if(0 == awaitAndPrintReport(1800)) // time slip
 									{
 										rc = 11;
 										if(0 == stopROSpec())
