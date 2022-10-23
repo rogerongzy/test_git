@@ -1,12 +1,25 @@
 reference:
+
 https://blog.csdn.net/qq_45950023/article/details/122082259
+
 https://blog.csdn.net/qq_38768959/article/details/124212863
 
 
 git steps:
-edition
-git add FILENAM.xxx
+
+edit
+
+git add .
+
 git commit -m ""
+
 git push
 
-Why I can not push after commiting?
+
+Common problems:
+
+"git remote -v" to check the URL of the repository is https or ssh
+
+"git remote set-url origin git@github.com:xxx/xxx.git" to modify
+
+"ssh -T git@github.com" to check connection status
