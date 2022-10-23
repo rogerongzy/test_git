@@ -9,4 +9,4 @@ git add FILENAM.xxx
 git commit -m ""
 git push
 
-why can not push?
+Why I can not push after commiting?
