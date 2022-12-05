@@ -1,0 +1,6 @@
+Dec 5 experiments conclusion:
+1. Time delay between publisher and subscriber, a little bit(1e-2) which can be ignored. 
+2. Use message_filters to synchronize the subscribered topics information.
+3. Show images published by realsense node publisher.
+4. receiving the newest messages, queue size both set 1 in publisher and subscriber (actually the former be 1 is OK)
+
