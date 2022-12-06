@@ -4,3 +4,10 @@ Dec 5 experiments conclusion:
 3. Show images published by realsense node publisher.
 4. receiving the newest messages, queue size both set 1 in publisher and subscriber (actually the former be 1 is OK)
 
+Dec 6 experiments conclusion:
+1. Reader impinj needs activation for connecting to an extended hub.
+2. To make sure no rfid information is left, queue_size is at least 15.
+
+Plan for Dec 7, 8:
+Bring together image using message filter and print out a picture together with an AOA.
+Find papers, from Zihao to RFID to single object tracking.
