@@ -5,7 +5,7 @@ from sensor_msgs.msg import Image, CameraInfo
 import message_filters
 import cv2
 from cv_bridge import CvBridge, CvBridgeError
- 
+
 def callback(data1,data2):
     bridge = CvBridge()
     color_image = bridge.imgmsg_to_cv2(data1, 'bgr8')
@@ -22,7 +22,7 @@ def callback(data1,data2):
  
 if __name__ == '__main__':
     # global fx, fy, ppx, ppy #相机内参
-    # fx = 609.134765 
+    # fx = 609.134765
     # fy = 608.647949
     # ppx = 312.763214
     # ppy = 240.882049
@@ -33,6 +33,9 @@ if __name__ == '__main__':
     depth = message_filters.Subscriber("/camera/aligned_depth_to_color/image_raw", Image)
     # color_depth = message_filters.ApproximateTimeSynchronizer([color, depth], 10, 1, allow_headerless=True)  # 接近时间同步
     color_depth = message_filters.TimeSynchronizer([color, depth], 1)  # 绝对时间同步
-    color_depth.registerCallback(callback)  
+    color_depth.registerCallback(callback)
     # 同时订阅/camera/color/image_raw和/camera/aligned_depth_to_color/image_raw话题，并利用实现话题同步，共同调用callback
     rospy.spin()
+
+
+    
