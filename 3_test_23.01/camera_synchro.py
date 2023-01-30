@@ -6,6 +6,9 @@ import message_filters
 import cv2
 from cv_bridge import CvBridge, CvBridgeError
 
+# test on synchronization using message filter
+# together with realsense camera node
+
 def callback(data1,data2):
     bridge = CvBridge()
     color_image = bridge.imgmsg_to_cv2(data1, 'bgr8')
@@ -37,5 +40,3 @@ if __name__ == '__main__':
     # 同时订阅/camera/color/image_raw和/camera/aligned_depth_to_color/image_raw话题，并利用实现话题同步，共同调用callback
     rospy.spin()
 
-
-    

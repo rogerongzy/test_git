@@ -19,4 +19,10 @@ try to add a header in rfid_msg
 
 Jan 30:
 fine tune P control in box-based tracking
-check if header is in the same form, or newly added header is incomplete?
+: kp = -0.001 works well
+check if header is in the same form, or newly added header is incomplete
+: same form, seconds and nano-seconds, using 
+next plan:
+1. run message filter and check if the messages align through time stamp
+2. record data using P-controlled demo
+3. transfer data to laptop 2

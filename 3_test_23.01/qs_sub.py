@@ -1,6 +1,8 @@
 import rospy
 from std_msgs.msg import String
 
+# test on queue size
+
 class SimpleSubscriber():
     def __init__(self) -> None:
         self.node=rospy.init_node('simple_listener')

@@ -1,6 +1,8 @@
 import rospy
 from std_msgs.msg import String
 
+# test on queue size
+
 if __name__ == '__main__':
     rospy.init_node('simple_talker')
     rate = rospy.Rate(5)
