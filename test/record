@@ -17,4 +17,6 @@ message_filter didn't work: rfid_msg has no attribute "header", including seq, s
 message_filter probably aligns the message according to header
 try to add a header in rfid_msg
 
-
+Jan 30:
+fine tune P control in box-based tracking
+check if header is in the same form, or newly added header is incomplete?
