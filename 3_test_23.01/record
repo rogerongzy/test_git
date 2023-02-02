@@ -22,7 +22,16 @@ fine tune P control in box-based tracking
 : kp = -0.001 works well
 check if header is in the same form, or newly added header is incomplete
 : same form, seconds and nano-seconds, using 
-next plan:
+Next plan:
 1. run message filter and check if the messages align through time stamp
 2. record data using P-controlled demo
 3. transfer data to laptop 2
+
+
+Feb 2:
+Finish writing message filter with multiple sensor topics, pending testing.
+Next plan:
+1. test on 6 antenna arrays
+2. transfer data to laptop 2
+3. add depth alert into box based controller
+4. more params in ros_navigation
