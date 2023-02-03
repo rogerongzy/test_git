@@ -27,7 +27,6 @@ Next plan:
 2. record data using P-controlled demo
 3. transfer data to laptop 2
 
-
 Feb 2:
 Finish writing message filter with multiple sensor topics, pending testing.
 Next plan:
@@ -35,3 +34,9 @@ Next plan:
 2. transfer data to laptop 2
 3. add depth alert into box based controller
 4. more params in ros_navigation
+
+Feb 3:
+Add std_msgs/Header in rfid package
+: if 'rfid_msg.h is not found' called, it may not be established instantly, try to compile for more times
+: directory caution, #include "rfid/rfid_msg.h"
+message filter for triple topics didn't work!!!
