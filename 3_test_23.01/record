@@ -40,3 +40,10 @@ Add std_msgs/Header in rfid package
 : if 'rfid_msg.h is not found' called, it may not be established instantly, try to compile for more times
 : directory caution, #include "rfid/rfid_msg.h"
 message filter for triple topics didn't work!!!
+
+Feb 6:
+Newly added .cpp & .launch file specially for box_controller.
+Pending testing on image subscription in cpp.
+Next plan:
+1. transfer to laptop 2
+2. add distance detection and adapted linear speed
