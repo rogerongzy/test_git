@@ -1,10 +1,11 @@
-Dec 5 experiments conclusion:
+Experiments Records in ISRL
+Dec 5:
 1. Time delay between publisher and subscriber, a little bit(1e-2) which can be ignored. 
 2. Use message_filters to synchronize the subscribered topics information.
 3. Show images published by realsense node publisher.
 4. receiving the newest messages, queue size both set 1 in publisher and subscriber (actually the former be 1 is OK)
 
-Dec 6 experiments conclusion:
+Dec 6:
 1. Reader impinj needs activation for connecting to an extended hub.
 2. To make sure no rfid information is left, queue_size is at least 15.
 
@@ -42,8 +43,19 @@ Add std_msgs/Header in rfid package
 message filter for triple topics didn't work!!!
 
 Feb 6:
-Newly added .cpp & .launch file specially for box_controller.
+Newly added .cpp & .launch file specially for box_controller. Only roslaunch will work while rosrun didn't work.
 Pending testing on image subscription in cpp.
 Next plan:
 1. transfer to laptop 2
 2. add distance detection and adapted linear speed
+
+Mar 14:
+Successfully added image subscriber into 'box_controller' and read depth stream.
+Only central point of the bounding box is used as depth index, which works poor when at contours or bounding box fluctuations (bunches of zeros or maximum).
+When the robot stops, some small disturbance exists.
+When shooting on thin things like single-layer paper, will go through.
+Next plan：
+1. Find a trick (such as multi-point filter on fore/background, time-based smoothing) to obtain more reasonable depth information.
+2. Add a flag as whether target exist within frame. If lost, keep turning and look for it. Former depth and center should be replaced.
+3. Further improve the whole performance.
+4. Make some record on data (graphs, etc.).
