@@ -59,3 +59,7 @@ Next plan：
 2. Add a flag as whether target exist within frame. If lost, keep turning and look for it. Former depth and center should be replaced.
 3. Further improve the whole performance.
 4. Make some record on data (graphs, etc.).
+
+Mar 15:
+Added a 5-point filter to fetch the correct depth of the foreground of the bounding box.
+Design a linear changable function to adapt the linear speed of the robot according to the global_depth, but problem is the datatype which sets to zero.
