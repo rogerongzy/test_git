@@ -63,3 +63,9 @@ Next plan：
 Mar 15:
 Added a 5-point filter to fetch the correct depth of the foreground of the bounding box.
 Design a linear changable function to adapt the linear speed of the robot according to the global_depth, but problem is the datatype which sets to zero.
+
+Mar 22:
+Sovling the datatype problem. Successfully achieve piecewise linear speed. Problem still exists at restart and stopping point.
+Next plan:
+1. When coming closer, the bounding box becomes ambiguous which cause fluctuations. Find a trick to solve it.
+2. When stopping, a crisp edge value will cause multi-times stop andrestart. Use the flag to restrict the condition of triggering restart. 
