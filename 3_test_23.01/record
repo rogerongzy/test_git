@@ -69,3 +69,8 @@ Sovling the datatype problem. Successfully achieve piecewise linear speed. Probl
 Next plan:
 1. When coming closer, the bounding box becomes ambiguous which cause fluctuations. Find a trick to solve it.
 2. When stopping, a crisp edge value will cause multi-times stop andrestart. Use the flag to restrict the condition of triggering restart. 
+
+Mar 29:
+Next plan,:
+1. Fixing the feetech motors by sending message to topics, merging the two launch files.
+2. Fixing USB port name, for dynamixel and feetech.
