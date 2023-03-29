@@ -71,6 +71,6 @@ Next plan:
 2. When stopping, a crisp edge value will cause multi-times stop andrestart. Use the flag to restrict the condition of triggering restart. 
 
 Mar 29:
-Next plan,:
+Next plan:
 1. Fixing the feetech motors by sending message to topics, merging the two launch files.
 2. Fixing USB port name, for dynamixel and feetech.
